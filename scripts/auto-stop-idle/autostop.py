@@ -71,6 +71,7 @@ if missingConfiguration:
 def is_idle(last_activity):
     last_activity = datetime.strptime(last_activity,"%Y-%m-%dT%H:%M:%S.%fz")
     if (datetime.now() - last_activity).total_seconds() > time:
+        print("Shutdown the instance because the datetime now is", datetime.now(), "and last activity was", last_activity)
         return True
     else:
         return False
